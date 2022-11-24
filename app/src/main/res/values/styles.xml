@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+    </style>
+
+    <style name = "Search.Cancel" parent="Widget.AppCompat.ImageButton">
+        <item name = "android:scaleType">centerInside</item>
+        <item name = "android:layout_marginEnd">10dp</item>
+    </style>
+
+    <style name = "Search.EditText" parent="Widget.AppCompat.EditText">
+        <item name = "android:drawablePadding">20dp</item>
+        <item name = "android:textColor">@color/black</item>
+        <item name = "android:textSize">26sp</item>
+        <item name = "android:textStyle">normal</item>
+        <item name = "android:capitalize">words</item>
+        <item name = "android:hint">@string/searchHint</item>
+        <item name = "android:textColorHint">@color/searchCancel</item>
+        <item name = "android:textCursorDrawable">@drawable/color_cursor</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:lines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name = "Search.ProgressBar" parent = "Widget.AppCompat.ProgressBar.Horizontal">
+        <item name = "android:backgroundTint">@color/white</item>
+        <item name = "android:indeterminate">true</item>
+        <item name = "android:indeterminateOnly"> true </item>
+        <item name = "android:indeterminateTint"> @color/purple_200</item>
+        <item name = "android:maxHeight">2dp</item>
+        <item name = "android:layout_marginTop">1dp</item>
+    </style>
+
+</resources>

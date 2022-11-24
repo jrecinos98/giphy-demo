@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.search.GifFragment"
+    android:background="@color/white"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/search_progressbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="20dp"
+        android:paddingVertical="5dp"
+        >
+
+        <ImageView
+            android:id="@+id/search_btn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_search"
+            android:backgroundTint="@color/colorAccent"
+            style="@style/Search.Cancel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/search_field"
+            app:layout_constraintTop_toTopOf="@id/search_field"
+            />
+
+        <EditText
+            android:id="@+id/search_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            style="@style/Search.EditText"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintStart_toEndOf="@+id/search_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/search_cancel"
+            />
+
+        <ImageView
+            android:id="@+id/search_cancel"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/ic_search_cancel"
+            style="@style/Search.Cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/search_field"
+            app:layout_constraintTop_toTopOf="@id/search_field"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ProgressBar
+        android:id="@+id/search_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchBar"
+        android:visibility="gone"
+        style="@style/Search.ProgressBar"
+        />
+
+    <com.giphy.sdk.ui.views.GiphyGridView
+        android:id="@+id/gifsGridView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_progressbar"
+        app:gphDirection="vertical"
+        app:gphSpanCount="2"
+        app:gphCellPadding="0dp"
+        app:gphShowCheckeredBackground="false"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

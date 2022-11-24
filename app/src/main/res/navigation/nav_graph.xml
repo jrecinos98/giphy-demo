@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/gifSearch">
+
+    <fragment
+        android:id="@+id/gifSearch"
+        android:name="com.edify.challenge.features.search.GifFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_gif">
+
+        <action
+            android:id="@+id/action_GifSearch_to_GifPreview"
+            app:destination="@id/gifPreview"
+            app:launchSingleTop="true"
+            app:popExitAnim="@android:anim/fade_out"
+            >
+            <argument
+                android:name="id"
+                android:defaultValue=""
+                app:argType="string"
+                />
+        </action>
+
+    </fragment>
+    <dialog
+        android:id="@+id/gifPreview"
+        android:name="com.edify.challenge.features.preview.PreviewGifFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_preview_gif">
+
+        <argument
+            android:name="id"
+            android:defaultValue=""
+            app:argType="string"
+            />
+    </dialog>
+</navigation>
